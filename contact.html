@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="language" content="english">
+    <meta name="handheldFriendly"content="true"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>General Hospital Obiaruku</title>
+    <meta property="og:title" content="General Hospital Obiaruku" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.generalhospitalobiaruku.ng"/>
+    <meta property="og:description" content="Comprehensive healthcare services offering quality medical care, emergency services, maternity care, and specialized treatments. Trusted healthcare provider in Obiaruku, Delta State. Visit us today!" />
+    <link rel="icon" href="assets/gho logo.png" type="image/png">
+    <style>
+         /* Basic styles for the button */
+    .hamburger-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+
+    /* SVG styles for lines */
+    .line {
+      fill: none;
+      stroke: #424242;
+      stroke-width: 12;
+      stroke-linecap: round;
+      transition: all 0.4s ease;
+      transform-origin: center;
+    }
+
+    /* Hamburger animation */
+    .line1 {
+      transform: translateY(-12px);
+    }
+    .line3 {
+      transform: translateY(12px);
+    }
+
+    /* Close button styles */
+    .active .line1 {
+      transform: rotate(45deg) translate(12px, 12px);
+    }
+    .active .line2 {
+      opacity: 0;
+    }
+    .active .line3 {
+      transform: rotate(-45deg) translate(12px, -12px);
+    }
+    
+    </style>
+    <link rel="stylesheet" href="stylesContactUs.css">
+    <script src="toggleText.js" defer></script>
+    <script src="toggleNav.js" defer></script>
+    <script src="toggleMenu.js" defer></script>
+    <script src="toggleClick.js" defer></script>
+    <script src="toggleDropdown.js" defer></script>
+    <script src="scrollTrigger.js" defer></script>
+    <script src="toggleBackground.js" defer></script>
+</head>
+<body>
+    <div class="page-blur"></div>
+    <header class="Navigation">
+            <img class="Logo" onclick="window.location.href='index.html'" src="assets/gho logo.png" alt="general hospital obiaruku logo" 
+              style="height: 60px; width: 100px;"/>
+       
+        <button class="hamburger"  aria-controls="nav-section" onclick="toggleMenu()" >
+            
+                <svg width="24" height="24" viewBox="0 0 100 100">
+                  <line class="line line1" x1="10" y1="25" x2="90" y2="25"></line>
+                  <line class="line line2" x1="10" y1="50" x2="90" y2="50"></line>
+                  <line class="line line3" x1="10" y1="75" x2="90" y2="75"></line>
+                </svg>
+              
+        </button>
+        <div class="nav-section" data-visible="false">
+            <nav>
+                <!-- <ul class="Items">
+                    <li class="nav-item" >
+                        <div class="nav-link" class="nav-item-dropdown">Our Services </div>
+                        <ul class="dropdown">
+                            <li><a href="nursing-care.html">Emergency Services</a></li>
+                            <li><a href="home-care.html">Maternity Care</a></li>
+                            <li><a href="dementia-care.html">General Medicine</a></li>
+                            <li><a href="terminal-care.html">Surgery & Procedures</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="why-we-care.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul> -->
+            
+            </nav>
+            
+            <button class="cta-button" onclick="window.location.href='contact.html'">Book Appointment</button>
+
+        </div>
+    </header>
+    <main>
+        <div class="gradient-overlay"></div>
+
+        <div class="contact-us-text fade-in">
+            <h2> We’re here to support you every step of the way</h2>
+            <p> Whether you have questions about our services, want to schedule a tour, or need assistance with elder care options, our team is ready to listen and provide the guidance you need. </p>
+        </div>
+        <div class="contact-form-section" id="contactForm">
+            <h3> Get in touch </h3>
+            <form action="process_form.php" method="POST" name="send" class="form-container fade-in">
+              <div class="form-group">
+                <label for="firstname">First Name: <sup> *</sup> <span class="error-msg"></span></label>
+                <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+              </div>
+            
+              <div class="form-group">
+                <label for="lastname">Last Name: <sup> *</sup> <span class="error-msg"></span></label>
+                <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+              </div>
+            
+              <div class="form-group">
+                <label for="email">Email Address: <sup> *</sup> <span class="error-msg"></span></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+            
+              <div class="form-group">
+                <label for="message">Message: <sup> *</sup> <span class="error-msg"></span></label>
+                <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+              </div>
+            
+              <button class="form-button" type="submit">Submit</button>
+              <div id="error-msg" style="color: red; margin-top: 10px;"></div>
+            </form>
+            
+        </div>
+        <!-- Success Overlay -->
+        <div id="success-overlay">
+            <div id="success-message">
+            <p>Thanks for your enquiry!
+              We'll send you a response within 48hrs.
+            </p>
+            <button id="close-btn">Close</button>
+            </div>
+        </div>
+
+    </main>
+    <footer class="Footer">
+        <div class="footer-logo-section">
+            <img class="Footer-logo" src="assets/gho logo.png" alt="General Hospital Obiaruku Logo" 
+            style="height: 60px; width: 100px;"/>
+        </div>
+        
+        <div class="footer-nav-section">
+            <nav>
+                <!-- <ul class="footer-items">
+                    <li class="footer-item">
+                        <a class="footer-link" href="nursing-care.html">Emergency Services</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="home-care.html">Maternity Care</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="dementia-care.html">General Medicine</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="end-of-life-care.html">Surgery & Procedures</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="why-we-care.html">About Us</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul> -->
+            </nav>
+        </div>
+        
+        <div class="footer-contact-section">
+            <p>© 2026  All rights reserved.</p>
+    </footer>
+ 
+     <script>
+        const form = document.getElementById('contactForm');
+        const inputs = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
+        const successOverlay = document.getElementById('success-overlay');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Add real-time validation for each input
+        inputs.forEach(input => {
+          // Validate input on blur (delayed validation)
+          input.addEventListener('blur', validateInput);
+
+          // Clear error state on click/focus
+          input.addEventListener('focus', clearErrorState);
+        });
+
+        // Validate input when blurred
+        function validateInput(event) {
+          const input = event.target;
+          const errorMsg = input.previousElementSibling.querySelector('.error-msg');
+
+          // Clear previous error message
+          errorMsg.textContent = '';
+
+          // Validate the input
+          if (input.value.trim() === "" || !input.checkValidity()) {
+            input.classList.add('error');
+            if (input.value.trim() === "") {
+              errorMsg.textContent = "This field is required.";
+            } else {
+              if (input.type === 'email') {
+                errorMsg.textContent = "Please enter a valid email.";
+              } else if (input.type === 'password' && input.value.length < 6) {
+                errorMsg.textContent = "Password must be at least 6 characters.";
+              } else if (input.tagName.toLowerCase() === 'textarea') {
+                errorMsg.textContent = "Please provide a message.";
+              }
+            }
+          } else {
+            input.classList.remove('error');
+          }
+        }
+
+        // Clear error state on click/focus
+        function clearErrorState(event) {
+          const input = event.target;
+          const errorMsg = input.previousElementSibling.querySelector('.error-msg');
+          
+          // Remove error class and clear error message
+          input.classList.remove('error');
+          errorMsg.textContent = '';
+        }
+
+        // Form submission handling
+        form.addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Check if all inputs are valid
+          let allValid = true;
+          inputs.forEach(input => {
+            const errorMsg = input.previousElementSibling.querySelector('.error-msg');
+            if (input.value.trim() === "" || !input.checkValidity()) {
+              input.classList.add('error');
+              if (input.value.trim() === "") {
+                errorMsg.textContent = "This field is required.";
+              }
+              allValid = false;
+            } else {
+              input.classList.remove('error');
+            }
+          });
+
+          if (allValid) {
+            showSuccessMessage();
+            form.reset(); // Reset form fields
+          }
+        });
+
+        // Clear errors function (in case you want to call it elsewhere)
+        function clearErrors() {
+          inputs.forEach(input => {
+            input.classList.remove('error'); // Remove error class from inputs
+            const errorMsg = input.previousElementSibling.querySelector('.error-msg');
+            errorMsg.textContent = ''; // Clear error message text
+          });
+        }
+
+        // Show success message
+        function showSuccessMessage() {
+          successOverlay.style.display = 'flex'; // Display the success overlay
+        }
+
+        // Close the success overlay
+        closeBtn.addEventListener('click', function() {
+          successOverlay.style.display = 'none';
+        });
+     </script>
+      
+</body>
+</html>

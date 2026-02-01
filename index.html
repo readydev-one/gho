@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="language" content="english">
+    <meta name="handheldFriendly"content="true"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>General Hospital Obiaruku</title>
+    <meta property="og:title" content="General Hospital Obiaruku" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.generalhospitalobiaruku.ng"/>
+    <meta property="og:description" content="Comprehensive healthcare services offering quality medical care, emergency services, maternity care, and specialized treatments. Trusted healthcare provider in Obiaruku, Delta State. Visit us today!" />
+    <link rel="icon" href="assets/gho logo.png" type="image/png">
+    <style>
+         /* Basic styles for the button */
+    .hamburger-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+
+    /* SVG styles for lines */
+    .line {
+      fill: none;
+      stroke: #424242;
+      stroke-width: 12;
+      stroke-linecap: round;
+      transition: all 0.4s ease;
+      transform-origin: center;
+    }
+
+    /* Hamburger animation */
+    .line1 {
+      transform: translateY(-12px);
+    }
+    .line3 {
+      transform: translateY(12px);
+    }
+
+    /* Close button styles */
+    .active .line1 {
+      transform: rotate(45deg) translate(12px, 12px);
+    }
+    .active .line2 {
+      opacity: 0;
+    }
+    .active .line3 {
+      transform: rotate(-45deg) translate(12px, -12px);
+    }
+    
+    </style>
+    <link rel="stylesheet" href="stylesbhc.css">
+    <script src="toggleText.js" defer></script>
+    <script src="toggleNav.js" defer></script>
+    <script src="toggleMenu.js" defer></script>
+    <script src="toggleClick.js" defer></script>
+    <script src="toggleDropdown.js" defer></script>
+    <script src="scrollTrigger.js" defer></script>
+    <script src="toggleBackground.js" defer></script>
+</head>
+<body>
+    <div class="page-blur"></div>
+    <header class="Navigation">
+            <img class="Logo" onclick="window.location.href='index.html'" src="assets/gho logo.png" alt="general hospital obiaruku logo"/>
+       
+        <button class="hamburger"  aria-controls="nav-section" onclick="toggleMenu()" >
+            
+                <svg width="24" height="24" viewBox="0 0 100 100">
+                  <line class="line line1" x1="10" y1="25" x2="90" y2="25"></line>
+                  <line class="line line2" x1="10" y1="50" x2="90" y2="50"></line>
+                  <line class="line line3" x1="10" y1="75" x2="90" y2="75"></line>
+                </svg>
+              
+        </button>
+        <div class="nav-section" data-visible="false">
+            <nav>
+                <!-- <ul class="Items">
+                    <li class="nav-item" >
+                        <div class="nav-link" class="nav-item-dropdown">Our Services </div>
+                        <ul class="dropdown">
+                            <li><a href="nursing-care.html">Emergency Services</a></li>
+                            <li><a href="home-care.html">Maternity Care</a></li>
+                            <li><a href="dementia-care.html">General Medicine</a></li>
+                            <li><a href="terminal-care.html">Surgery & Procedures</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="why-we-care.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul> -->
+            
+            </nav>
+            
+            <button class="cta-button" onclick="window.location.href='contact.html'">Book Appointment</button>
+
+        </div>
+    </header>
+    <main>
+       
+        <div class="gradient-overlay"></div>
+        <div class="blob-container">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+        </div>
+        <!-- <img class="display-1" src="assets/man assisted by caregiver in excercise.jpg" alt="man assisted by caregiver in excercise"/> -->
+        <div class="Landing-page-text fade-in">
+        
+            <h1> Building Community through health.</h1>
+            <p> We understand that choosing the right healthcare provider for you and your family is one of the most important decisions you'll ever make. </p>
+            <button class="cta-button" onclick="window.location.href='contact.html'">Book Appointment</button>
+
+        </div>
+        <div class="Landing-page-section section" id="section1">
+            <div class="Landing-page-section-text fade-in">
+                <h2> Healthcare you can trust </h2>
+                <p>  General Hospital Obiaruku is a leading healthcare provider in Delta State. We are committed to providing exceptional, compassionate medical care that brings health, healing, and peace of mind to both you and your family.</p>
+                <button class="cta-button" onclick="window.location.href='contact.html'">Book Appointment</button>
+
+            </div>
+            <img class="display-2" src="assets/happy woman smiling.jpg" alt="happy woman smiling"/>
+        </div>
+        
+        <section class="care-type-section section" id="section2">
+            <h2>Our Services</h2>
+            <div class="care-type-container">
+                <div  class="care-type-item fade-in">
+                    <div class="care-type-content-1">
+                        <h3>Emergency Services</h3>
+                        <p>24/7 emergency care is available with trained medical professionals ready to handle urgent medical situations and life-threatening conditions.</p>
+                        <h5> Learn more </h5>
+                    </div>
+                </div>
+                
+                <div  class="care-type-item fade-in">
+                    <div class="care-type-content-2">
+                        <h3>Maternity Care</h3>
+                        <p>Comprehensive maternity services including prenatal care, safe delivery, postnatal support, and newborn care for expecting mothers.</p>
+                        <h5> Learn more </h5>
+                    </div>
+                </div>
+                
+                <div  class="care-type-item fade-in">
+                    <div class="care-type-content-3">
+                        <h3>General Medicine</h3>
+                        <p>Complete medical consultation and treatment for various health conditions with experienced doctors and modern diagnostic facilities.</p>
+                        <h5> Learn more </h5>
+                    </div>
+                </div>
+                
+                <div class="care-type-item fade-in">
+                    <div class="care-type-content-4">
+                        <h3>Surgery & Procedures</h3>
+                        <p>Modern surgical facilities with skilled surgeons performing both minor and major procedures with patient safety as top priority.</p>
+                        <h5> Learn more </h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="blog section" id="section3">
+            
+            <h2> Health tips and information </h2>
+            <div class="blog-container">
+                
+                <div class="blog-item fade-in">
+                    <h3>Essential Health Screenings Everyone Should Get</h3>
+                    <p>
+                        Regular health screenings are crucial for early detection and prevention of diseases. Learn about the most important health checks you should schedule... 
+                        <a href="#blog1" class="read-more-link">Read More</a>
+                    </p>
+                </div>
+                
+                <div class="blog-item fade-in">
+                    <h3>Understanding Common Tropical Diseases and Prevention</h3>
+                    <p>
+                        Living in tropical regions requires awareness of common diseases like malaria and typhoid. Discover prevention methods and when to seek medical help... 
+                        <a href="#blog1" class="read-more-link">Read More</a>
+                    </p>
+                </div>
+                
+                
+                <div class="blog-item fade-in">
+                    <h3>Maternal Health: What Every Expecting Mother Should Know</h3>
+                    <p>
+                        Pregnancy is a precious journey that requires proper medical care and attention. Learn about important prenatal care and what to expect during delivery... 
+                        <a href="#blog1" class="read-more-link">Read More</a>
+                    </p>
+                </div>
+               
+               
+                <div class="blog-item fade-in">
+                    <h3>Managing Chronic Conditions: A Guide to Better Health</h3>
+                    <p>
+                        Living with chronic conditions like diabetes or hypertension requires ongoing management. Discover practical tips for maintaining your health and quality of life... 
+                        <a href="#blog1" class="read-more-link">Read More</a>
+                    </p>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        <div class="cta-section-container">
+            <div class="cta-section">
+                <h2> We are here for you </h2>
+                <p> Visit us today or schedule an appointment.</p>
+                <button class="cta-button" onclick="window.location.href='contact.html'">Book Appointment</button>
+
+            </div>
+            <!-- <img class="display-3" src="assets/a cup of coffee.jpg" alt="a cup of coffee"/> -->
+        </div>
+        <!-- <div class="accreditation-section">
+            <h3>Proudly Recognized by: </h3>
+            <img src="assets/gho logo.svg" alt="Delta State Ministry of Health logo">
+        </div> -->
+    </main>
+    <footer class="Footer">
+        <div class="footer-logo-section">
+            <img class="Footer-logo" src="assets/gho logo.png" alt="General Hospital Obiaruku Logo" />
+        </div>
+        
+        <div class="footer-nav-section">
+            <nav>
+                <!-- <ul class="footer-items">
+                    <li class="footer-item">
+                        <a class="footer-link" href="nursing-care.html">Emergency Services</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="home-care.html">Maternity Care</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="dementia-care.html">General Medicine</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="end-of-life-care.html">Surgery & Procedures</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="why-we-care.html">About Us</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="footer-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul> -->
+            </nav>
+        </div>
+        
+        <div class="footer-contact-section">
+            <p>© 2026  All rights reserved.</p>
+    </footer>
+    <script>
+       
+    </script>
+</body>
+</html>

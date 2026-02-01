@@ -1,0 +1,786 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+ /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+*{
+  
+    margin: 0;
+	padding: 0;
+ 
+}
+
+main{
+  display: grid;
+  grid-template-areas: 'main' 1fr;
+  background-color: #f2f7f8; 
+  font-family: Montserrat, Sans Serif;                     
+}
+
+  
+
+:root {
+  --subheading-font-family: "Inter", Helvetica;
+  --subheading-font-weight: 400;
+  --subheading-font-size: 24px;
+  --subheading-letter-spacing: 0px;
+  --subheading-line-height: 150%;
+  --subheading-font-style: normal;
+  --small-text-font-family: "Inter", Helvetica;
+  --small-text-font-weight: 500;
+  --small-text-font-size: 16px;
+  --small-text-letter-spacing: 0px;
+  --small-text-line-height: 150%;
+  --small-text-font-style: normal;
+  --body-text-font-family: "Inter", Helvetica;
+  --body-text-font-weight: 500;
+  --body-text-font-size: 20px;
+  --body-text-letter-spacing: 0px;
+  --body-text-line-height: 150%;
+  --body-text-font-style: normal;
+  --button-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --collection-1-image: initial;
+  --variable-collection-spacing-m: 48px;
+  --variable-collection-spacing-XS: 8px;
+  --variable-collection-spacing-s: 24px;
+  --variable-collection-spacing-SM: 32px;
+}
+
+.Navigation{
+  /* display: grid;
+  grid-template-columns: 1fr 70% 1fr; */
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  font-family: Inter;
+  height: 77px;
+  align-items: center;
+  z-index: 99;
+  background-color: #fff;
+  box-shadow: 0 2px 100px 0px rgba(0, 0, 0, 0.2); /* Darker shadow */
+ 
+  color: #000;
+  font-family: Montserrat;
+  /* 30px */
+}
+
+.Navigation > img{
+  height: 12rem;
+  width: 12rem;
+  cursor: pointer;
+}
+
+.nav-section{
+  display: flex;
+  align-items: center;
+  gap: var(--Spacing-M, 48px);
+}
+.Items{
+  display: flex;
+ 
+  
+  gap: var(--Spacing-M, 48px);
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.nav-item{
+  /* Body text */
+  position: relative;
+  font-size: .9rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 4px;
+  background-color: #279091; /* Color of the underline */
+  transform: scaleX(0); /* Start the underline hidden */
+  transform-origin: right; /* Animate from right to left */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* On hover, expand the underline from left to right */
+.nav-link:hover::after {
+  transform: scaleX(1); /* Show the underline on hover */
+  transform-origin: left;
+}
+
+.nav-link{
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  list-style-type: none;
+  cursor: pointer;
+  color: hsl(181 48 22);
+}
+
+
+.dropdown{
+ 
+  display: block;
+  position: absolute;
+  top: 200%; /* Position the dropdown below the parent */
+  left: -50px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for dropdown */
+  
+  list-style-type: none;
+  z-index: 10;
+  cursor: pointer;
+  
+  visibility: hidden;
+  transition: opacity 0.1s ease, visibility 0.3s ease;
+  transition-delay: 0s; /* No delay initially */
+  
+}
+
+/* Delay hiding the dropdown */
+.nav-item .dropdown {
+  transition-delay: .2s; /* Slight delay before hiding */
+}
+
+/* Show the dropdown on hover of the nav-item or the dropdown itself */
+.nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown {
+ 
+  visibility: visible;
+  
+}
+
+
+.dropdown li {
+  background-color: hsl(181 43 61/.5);
+}
+
+.dropdown li a {
+  text-decoration: none;
+  color: #424242; /* Link color */
+  /* padding: 2rem 4rem; */
+  
+  display: block;
+  width: 12rem;
+  height: 4rem;
+  transition: background-color .3s ease;
+ 
+  align-content: center;
+  text-align: center;
+}
+
+.dropdown li a:hover {
+  background-color: hsl(181 43 90/1);
+  
+}
+
+
+
+/* Dropdown menu (initially hidden) */
+
+
+/* Show dropdown menu on hover */
+
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  
+  
+}
+
+.cta-button{
+  font-family: Inter;
+  font-size: .9rem;
+  font-weight: 700;
+  width: 8.25rem;
+  background: #0e6a4a;
+  padding: 10px 20px; /* Adjust the padding as needed */
+  border-radius: 32px; /* Sets the border radius */
+  
+  color: white; /* Text color */
+  border: none; /* Removes any default border */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  font-size: 16px; /* Adjust the font size as needed */
+  transition: background-color 0.3s ease; /* Adds a transition effect */
+}
+  /* 
+  color:#fff;
+
+  padding: .6rem var(--Spacing-S, 24px);
+  place-self: center;
+  gap: var(--Spacing-XS, 8px);
+ 
+  
+  text-align: center;
+  margin-inline: auto;
+} */
+   
+.display-1{
+    z-index:0;
+    position:absolute;
+    mix-blend-mode: multiply;
+    opacity:.9;
+    width: 100%;
+    max-height: 50vh;
+    top: 77px;
+    object-fit: cover;
+    margin-inline: auto;
+}
+
+
+.gradient-overlay {
+    position: relative;
+    display: flex;
+    z-index:2;
+    opacity: .4;
+    width: auto;
+    height: 50vh;
+   
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgb(111.12, 196.86, 197.84) , rgb(254, 254, 254) 100%);
+  }
+  
+  h1{
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(2rem, 6vw + 1rem, 5rem );
+    font-weight: 700;
+    color: #4c4c4c;
+    
+  }
+
+  h2{
+    font-family: Montserrat, san-serif;
+    font-size: clamp(1rem, 3vw + 1rem, 2.5rem );
+    font-weight: 700;
+    color: #4c4c4c;
+  }
+
+  h3{
+    font-family: Montserrat;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4c4c4c;
+  }
+
+
+  p{
+    font-family: Inter;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #828282
+  }
+
+  .contact-us-text{
+    display: grid;
+    grid-template-columns: 1fr;
+   place-items: center end;
+    
+    position: relative;
+    
+
+    text-align: right;
+    right: 0;
+    margin-top: 4rem;
+    margin-left: 50.3%;
+    margin-right: 6.25%;
+    
+    gap: 1.5rem;
+  }
+  .contact-form-section {
+    background-color: #d9d9d9;
+    
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    /* flex-direction: column; */
+    place-items:center ;
+    margin-top: 8rem;
+    padding-top: 4rem;
+}
+
+
+
+.form-container{
+  margin-top: 2rem;
+  width: 45%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+label {
+    font-family: Merriweather Sans, San serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #43634f;
+}
+
+input, textarea {
+    display: grid;
+    width: 100%;
+    padding: .625rem;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:hover {
+  border-color: #43634f; /* changes border color on hover */
+}
+
+/* Focus state */
+input:focus {
+  background-color: #fff; /* light background color on focus */
+  border-color: #43634f; /* border color on focus */
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.5); /* subtle glow */
+}
+
+input.error {
+  border-color: red; /* red border on error */
+  background-color: #fff; /* light red background */
+  
+}
+
+
+textarea {
+    resize: none;
+}
+
+.form-button {
+    width: 100%;
+    background-color: #279091;;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+
+.form-button:hover {
+    background-color: hsl(181 48 22);
+}
+
+
+.error-msg {
+  color: rgb(171, 38, 38);
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+
+/* Success overlay styling */
+#success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+}
+
+#success-message {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#success-message p {
+  font-size: 18px;
+  color: hsl(181 48 22);
+}
+
+#close-btn {
+  margin-top: 3rem;
+  padding: 8px 16px;
+  background-color: #279091;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#close-btn:hover {
+  background-color: #279091;;
+}
+
+.accreditation-section{
+  
+  padding:1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  
+}
+
+.accreditation-section img{
+  mix-blend-mode: multiply;
+  max-width: 8rem;
+}
+
+.Footer {
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
+  background-color: #333;
+  color: #424242;
+  padding: 4rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: Montserrat, san-serif;
+
+}
+
+.footer-logo-section {
+  flex: 1;
+  padding: 10px;
+}
+
+.Footer-logo {
+  max-width: 20rem;
+}
+
+.footer-nav-section {
+  flex: 2;
+  padding: 10px;
+}
+
+.footer-items {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ 
+  
+  width: 50% ;
+  
+  gap: 1rem;
+  
+  margin-left:40%;
+
+}
+
+.footer-item {
+  display: inline-block;
+}
+
+.footer-link {
+  color: #c0d2d2;
+  text-decoration: none;
+  font-size: .8rem;
+  cursor: pointer;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-contact-section {
+  
+  flex: 1;
+  padding: 10px;
+}
+
+.footer-contact-section p{
+  font-size: .8rem;
+}
+/* Responsive styling */
+@media (max-width: 48rem) {
+ /* Initial hidden state */
+ .fade-in {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out !important;
+}
+
+/* Visible state on scroll */
+.fade-in-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+header > img{
+  position: absolute;
+  left: .25rem;
+}
+  .hamburger {
+    display: block;
+  
+  width: 2rem;
+  
+  border: 0;
+  position: absolute;
+  aspect-ratio: 1;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 150; /* Make sure it’s above other elements */
+  }
+
+  .line{
+    stroke:hsl(181 48 22);
+  }
+
+
+  .Items{
+    gap: var(--Spacing-M, 4px);
+  }
+
+  .nav-section{
+    position: fixed;
+    inset: 0 0 0 15%;
+    height: 80vh;
+
+    flex-direction: column;
+    padding: min(15vh, 10rem) .5rem;
+    padding-left: 0 !important;
+
+    background: hsl(181 57 36% /.8);
+    backdrop-filter: blur(2rem);
+    
+    z-index: 100;
+    align-items: flex-start;
+    border-bottom-left-radius: 8px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    color: #f7f7f7;
+   
+  }
+
+  .nav-section[data-visible="true"] {
+    transform: translateX(0);
+  }
+
+  .nav-section > .cta-button{
+    display: none;
+  }
+
+  .nav-item > .nav-link{
+    color: #fff !important;
+  }
+
+  .nav-link::after{
+    all: unset;
+  }
+  
+  .dropdown{
+    all:unset;
+  }
+
+  .dropdown li a{
+    all: unset;
+  }
+
+  .dropdown li a:hover{
+    background-color: transparent;
+  }
+
+  .dropdown li a{
+    color: hsl(0 0 100/0.8);
+    width: 100vw;
+    display: block;
+    padding: .5rem;
+    margin-left: .5rem;
+    text-decoration: none;
+    font-size: 12px;
+    border-bottom: 1px solid hsl(36 63 50/0.5);
+    transition: background-color 0.2s ease;
+    list-style-type: none;
+   
+  }
+
+  .nav-item{
+    background-color: transparent;
+    border-bottom: 1.5px solid hsl(36 63 50/0.5);
+    width: 100vw;
+    
+    padding-left: 1rem;
+    cursor: pointer;
+  }
+
+  .dropdown a.active {
+    background-color: #279091;
+ 
+}
+
+.nav-item.active  {
+  background-color: #279091; /* Red color for active state */
+  
+}
+
+.nav-link{
+  width: 100vw;
+
+  display: block;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  align-items: center;
+  }
+
+
+  .Items{
+    flex-direction: column;
+  }
+
+  .nav-item:first-child{
+    border-bottom: none;
+  }
+
+  
+
+  .page-blur{
+    position: fixed;
+    /* inset: 0; 
+    backdrop-filter: blur(.2rem); 
+    z-index: 50; */
+  }
+
+  .display-1{
+    height: 50vh !important;
+    max-height: 40vh;
+    opacity: 1 !important;
+    
+  } 
+
+  .gradient-overlay{
+    opacity: .2 !important;
+   
+  }
+
+  .contact-us-text{
+    text-align: left;
+    justify-items: start ;
+    width: 90%;
+    
+    margin-top: 1rem;
+    margin-left: 5%;
+    margin-right: 5%
+  }
+
+  .contact-us-text h2{
+    font-size: 1.5rem;
+  }
+  
+  .contact-us-text p{
+    font-size: 1rem;
+    font-weight: 400;
+    padding-top: .5rem;
+  }
+
+  .contact-form-section > *{
+    width: 90%;
+    margin-inline: 5%;
+
+  }
+
+  .accreditation-section{
+    gap: 3rem;
+    width: 100% !important;
+    padding-inline: 5%;
+  }
+
+  .accreditation-section h3{
+    font-size: 1rem;
+  }
+
+}
